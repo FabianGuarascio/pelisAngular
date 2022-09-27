@@ -1,2 +1,2 @@
-export interface AppState {
+export interface IAppState {
 }
