@@ -1,13 +1,13 @@
 import { createAction, props } from "@ngrx/store";
 import { IResult } from "../types/movieResponse.interface";
 
-export const getBooksAction=createAction(
-    '[Home Page] Get Books'
+export const getMoviesAction=createAction(
+    '[Home Page] Get Movies'
 )
-export const getBookSuccessAction=createAction(
-    '[Home Page] Get Books success',
+export const getMoviesSuccessAction=createAction(
+    '[Home Page] Get Movies success',
     props<{results:IResult[]}>()
 )
-export const getBookFailureAction=createAction(
-    '[Home Page] Get Books failure'
+export const getMoviesFailureAction=createAction(
+    '[Home Page] Get Movies failure'
 )
