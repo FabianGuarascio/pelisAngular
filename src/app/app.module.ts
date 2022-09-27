@@ -11,6 +11,7 @@ import { SharedModule } from './shared/shared.module';
 import { LoginModule } from './login/login.module';
 import { MovieDetailsModule } from './movie-details/movie-details.module';
 import { HomeModule } from './home/home.module';
+import {HttpClientModule} from '@angular/common/http'
 
 @NgModule({
   declarations: [
@@ -23,6 +24,7 @@ import { HomeModule } from './home/home.module';
     LoginModule,
     MovieDetailsModule,
     HomeModule,
+    HttpClientModule,
     StoreModule.forRoot({}, {}),
     EffectsModule.forRoot([]),
     StoreDevtoolsModule.instrument({ maxAge: 25, logOnly: environment.production })
