@@ -1,5 +1,12 @@
 <app-header></app-header>
-<ng-container *ngFor="let poster of testArr">
-    <app-movie-poster></app-movie-poster>
-</ng-container>
+<div *ngIf="isLoading$ | async as loading">
+    {{loading}} ...Loading
+</div>
+<div class="movies_container">
+    <ng-container *ngFor="let movie of movies$|async" >
+        <app-movie-poster
+        [movie]="movie"
+        ></app-movie-poster>
+    </ng-container>
+</div>
 <app-footer></app-footer>

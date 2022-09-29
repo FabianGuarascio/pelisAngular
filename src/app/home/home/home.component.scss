@@ -1,0 +1,14 @@
+:host{
+    width: 100%;
+}
+.movies_container{
+    display: grid;
+    place-items: center;
+    grid-template-columns: repeat(auto-fill,minmax(250px,1fr));
+    gap: 10px;
+    min-width: 240px;
+    width: 100%;
+    background-color: red;
+}
+
+
