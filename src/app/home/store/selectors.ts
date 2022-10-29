@@ -9,6 +9,9 @@ export const getMoviesLoadingSelector=createSelector(
 export const getMoviesSuccessSelector=createSelector(
     selectFeature,(state)=>state.results
 )
+export const getMoviesHasLoadedSelector=createSelector(
+    selectFeature,(state)=>state.hasLoaded
+)
 export const getMoviesErrorSelector=createSelector(
     selectFeature,(state)=>state.error
 )
