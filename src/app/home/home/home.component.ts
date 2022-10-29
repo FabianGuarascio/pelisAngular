@@ -2,8 +2,8 @@ import { Component, OnInit } from '@angular/core';
 import { select, Store } from '@ngrx/store';
 import { IAppState } from 'src/app/types/app-state';
 import { MovieService } from '../services/movie.service';
-import { getMoviesAction } from '../store/actions';
-import { getMoviesLoadingSelector, getMoviesSuccessSelector } from '../store/selectors';
+import { getMoviesAction, removeMoviesSuccessAction } from '../store/actions';
+import { getMoviesHasLoadedSelector, getMoviesLoadingSelector, getMoviesSuccessSelector } from '../store/selectors';
 import { IResult } from '../types/movieResponse.interface';
 import {Observable} from 'rxjs'
 
@@ -14,14 +14,21 @@ import {Observable} from 'rxjs'
 })
 export class HomeComponent implements OnInit {
 public isLoading$= this.store.pipe(select(getMoviesLoadingSelector))
-public movies$:Observable<IResult[]>= this.store.pipe(select(getMoviesSuccessSelector))
+public hasLoaded$= this.store.pipe(select(getMoviesHasLoadedSelector))
+public movies$:Observable<IResult[] | undefined>= this.store.pipe(select(getMoviesSuccessSelector))
   
   constructor(private store:Store<IAppState>) {
-    this.store.dispatch(getMoviesAction())
-    }
+    this.hasLoaded$.subscribe(res=>{
+      if(!res){
+        this.store.dispatch(getMoviesAction())
+      }
+    })
+  }
 
   ngOnInit(): void {
 
   }
-
+  borrar(){
+    this.store.dispatch(removeMoviesSuccessAction())
+  }
 }
