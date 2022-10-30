@@ -1,3 +1,5 @@
 <div *ngIf="movie">
-    <img [src]="'https://image.tmdb.org/t/p/w200'+movie.poster_path" alt="">
+    <img [src]="posterPath" alt="">
+    <span>{{movie.title}}</span>
+    <button (click)="addToFav(movie.title,posterPath)"> add to fav</button>
 </div>
