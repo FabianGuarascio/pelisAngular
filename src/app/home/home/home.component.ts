@@ -26,7 +26,6 @@ public movies$:Observable<IResult[] | undefined>= this.store.pipe(select(getMovi
   }
 
   ngOnInit(): void {
-
   }
   borrar(){
     this.store.dispatch(removeMoviesSuccessAction())
