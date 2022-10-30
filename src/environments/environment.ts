@@ -4,7 +4,8 @@
 
 export const environment = {
   production: false,
-  urlApi:"https://api.themoviedb.org/3/discover/movie?api_key=d6a067dbffb83bf22b75cf80963c8030"
+  urlApi:"https://api.themoviedb.org/3/discover/movie?api_key=d6a067dbffb83bf22b75cf80963c8030",
+  nodeUrl:"/api/favmovies"
 };
 
 /*
